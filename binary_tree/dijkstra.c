@@ -2,6 +2,9 @@
 Program Name: Dijkstra's Algorithm
 Problem Statement: shortest distance from a source vertex to all other vertices in a weighted graph using Dijkstra's algorithm.
 
+Time Complexity: O(V^2) where V is the number of vertices
+Space Complexity: O(V) 
+
 Example:
 
 Input:
