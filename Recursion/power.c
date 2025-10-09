@@ -22,6 +22,9 @@ Input: x = 2, n = -2
 Output: 0.25
 Explanation: 2^-2 = 1/(2^2) = 0.25
 
+Compilation Command:
+gcc power.c -o power
+
 Constraints:
 -10^9 <= x <= 10^9
 -10^9 <= n <= 10^9
