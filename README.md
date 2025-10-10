@@ -1,10 +1,18 @@
-New example programs added in this branch:
+<h1 align="center">C Language Programs — Hacktoberfest 2025 🎯🐍</h1>
 
-- `file_io_examples.c` — shows basic file write/read using fopen/fgets/fprintf.
-- `dynamic_array.c` — simple vector-like dynamic array with push and resizing.
-- `linked_list_example.c` — singly linked list with insert, delete, and print.
-- `bst_example.c` — binary search tree insert + inorder traversal.
-C Language Programs — Hacktoberfest 2025 🎯🐍
+<p align="center">
+  <b>A curated collection of fundamental C Language Programs for beginners, students, and interview preparation.</b>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/C-Language-Programs?style=for-the-badge&logo=java">
+  <img src="https://img.shields.io/github/stars/dimpeshmalviya/C-Language-Programs?style=for-the-badge&color=yellow">
+  <img src="https://img.shields.io/github/forks/dimpeshmalviya/C-Language-Programs?style=for-the-badge&color=blue">
+  <img src="https://img.shields.io/github/license/dimpeshmalviya/C-Language-Programs?style=for-the-badge&color=green">
+</p>
+
+---
+ 
 
 Hi — I’m Dimpesh Panwar 👋
 Welcome to the C Language Programs repo for Hacktoberfest 2025! This repo is all about small, well-documented C programs that help beginners learn and contributors practice open-source collaboration.
