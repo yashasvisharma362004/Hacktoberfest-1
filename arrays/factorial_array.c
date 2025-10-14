@@ -1,4 +1,4 @@
- #include <stdio.h>
+#include <stdio.h>
 
 int main() {
     int n, i, j;
@@ -36,5 +36,5 @@ int main() {
             printf("Factorial of %d is %llu\n", numbers[i], factorial[i]);
     }
 
-    return 0; 
+    return 0;
 }
