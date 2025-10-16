@@ -174,62 +174,62 @@ void printSummary(int playerScore, int computerScore) {
 }
 
 int main() {
-    int playerChoice, computerChoice, result;
-    int playerScore = 0, computerScore = 0;
-    int rounds, roundCount = 0;
     char playAgain;
-
     srand(time(0));
-    clearScreen();
-    printBanner();
 
-    printf(CYAN "\nWelcome to Rock Paper Scissors!\n" RESET);
-    printf("How many rounds would you like to play (Best of N)? ");
-    scanf("%d", &rounds);
+    do {
+        int playerChoice, computerChoice, result;
+        int playerScore = 0, computerScore = 0;
+        int rounds, roundCount = 0;
 
-    while (1) {
         clearScreen();
         printBanner();
 
-        printf("\nRound %d/%d\n", roundCount + 1, rounds);
-        printf("\nChoose your move:\n");
-        printf("0. Rock\n1. Paper\n2. Scissors\nYour choice: ");
-        scanf("%d", &playerChoice);
+        printf(CYAN "\nWelcome to Rock Paper Scissors!\n" RESET);
+        printf("How many rounds would you like to play (Best of N)? ");
+        scanf("%d", &rounds);
 
-        if (playerChoice < 0 || playerChoice > 2) {
-            printf(RED "Invalid choice! Please try again.\n" RESET);
-            delay(1000);
-            continue;
+        while (roundCount < rounds) {
+            clearScreen();
+            printBanner();
+
+            printf("\nRound %d/%d\n", roundCount + 1, rounds);
+            printf("\nChoose your move:\n");
+            printf("0. Rock\n1. Paper\n2. Scissors\nYour choice: ");
+            scanf("%d", &playerChoice);
+
+            if (playerChoice < 0 || playerChoice > 2) {
+                printf(RED "Invalid choice! Please try again.\n" RESET);
+                delay(1000);
+                continue;
+            }
+
+            computerChoice = getComputerChoice();
+            printRoundArt(playerChoice, computerChoice);
+            result = getWinner(playerChoice, computerChoice);
+
+            if (result == 1) playerScore++;
+            else if (result == -1) computerScore++;
+
+            printRandomMessage(result);
+            printf("\nCurrent Score: You %d | Computer %d\n", playerScore, computerScore);
+
+            roundCount++;
+
+            if (roundCount < rounds) {
+                printf("\nPress Enter to play next round...");
+                getchar(); getchar();
+            }
         }
 
-        computerChoice = getComputerChoice();
-        printRoundArt(playerChoice, computerChoice);
-        result = getWinner(playerChoice, computerChoice);
+        printSummary(playerScore, computerScore);
 
-        if (result == 1) playerScore++;
-        else if (result == -1) computerScore++;
+        printf("\nWould you like to play another match? (y/n): ");
+        scanf(" %c", &playAgain);
 
-        printRandomMessage(result);
-        printf("\nCurrent Score: You %d | Computer %d\n", playerScore, computerScore);
+    } while (playAgain == 'y' || playAgain == 'Y');
 
-        roundCount++;
-        if (roundCount == rounds) {
-            printSummary(playerScore, computerScore);
-            break;
-        }
-
-        printf("\nPress Enter to play next round...");
-        getchar(); getchar();
-    }
-
-    printf("\nWould you like to play another match? (y/n): ");
-    scanf(" %c", &playAgain);
-
-    if (playAgain == 'y' || playAgain == 'Y') {
-        main();
-    } else {
-        printf(YELLOW "\nThanks for playing! See you next time!\n" RESET);
-    }
+    printf(YELLOW "\nThanks for playing! See you next time!\n" RESET);
 
     return 0;
 }
