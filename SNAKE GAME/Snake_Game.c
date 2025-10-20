@@ -65,13 +65,13 @@ void Draw() {
 }
 
 void Input() {
-    if (_kbhit()) {
-        switch (_getch()) {
-            case 'a': dir = LEFT; break;
-            case 'd': dir = RIGHT; break;
-            case 'w': dir = UP; break;
-            case 's': dir = DOWN; break;
-            case 'x': gameOver = 1; break;
+   if (_kbhit()) {
+        char c = _getch();
+        if (c == 'a' && dir != RIGHT) dir = LEFT;
+        else if (c == 'd' && dir != LEFT) dir = RIGHT;
+        else if (c == 'w' && dir != DOWN) dir = UP;
+        else if (c == 's' && dir != UP) dir = DOWN;
+        else if (c == 'x') gameOver = 1;
         }
     }
 }
