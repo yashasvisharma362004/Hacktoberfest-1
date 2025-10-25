@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <limits.h>
+
+
 void kadane(int arr[], int n) {
     int max_so_far = INT_MIN;   // Holds the maximum sum found so far
     int max_ending_here = 0;    // Holds the current subarray sum
@@ -27,6 +29,7 @@ void kadane(int arr[], int n) {
     printf("Subarray elements: ");
     for (int i = start; i <= end; i++)
         printf("%d ", arr[i]);
+    printf("\n");
     printf("\n");
 }
 
